@@ -1,3 +1,11 @@
+//
+//  ViewController.swift
+//  openuri
+//
+//  Created by ipad_kid on 6/28/17.
+//  Copyright © 2017 BlackJacket. All rights reserved.
+//
+
 import UIKit
 
 class ViewController: UIViewController {
@@ -15,14 +23,14 @@ class ViewController: UIViewController {
     @IBAction func doStuff() {
         let sharedApp = UIApplication.shared
         
-        guard let userInput = inputField.text, let urlString = URL(string:userInput) else {
+        guard let userInput = inputField.text, let urlString = URL(string: userInput) else {
             defaults.set("", forKey: previous)
             defaults.synchronize()
             return
         }
         
         if #available(iOS 10.0, *) {
-            sharedApp.open(urlString, options: [:], completionHandler: nil)
+            sharedApp.open(urlString, completionHandler: nil)
         } else {
             sharedApp.openURL(urlString)
         }
