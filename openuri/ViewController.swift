@@ -8,8 +8,8 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
     @IBOutlet weak var inputField: UITextField!
     private let defaults = UserDefaults.standard
     private let previous = "previous"
@@ -20,23 +20,31 @@ class ViewController: UIViewController {
         inputField.text = previousInput
     }
     
-    @IBAction func doStuff() {
+    func openLink() -> Bool {
+        guard let userInput = inputField.text, let urlString = URL(string: userInput) else { return false }
+        
         let sharedApp = UIApplication.shared
-        
-        guard let userInput = inputField.text, let urlString = URL(string: userInput) else {
-            defaults.set("", forKey: previous)
-            defaults.synchronize()
-            return
-        }
-        
-        if #available(iOS 10.0, *) {
-            sharedApp.open(urlString, completionHandler: nil)
+        if sharedApp.canOpenURL(urlString) {
+            if #available(iOS 10.0, *) {
+                sharedApp.open(urlString, completionHandler: nil)
+            } else {
+                sharedApp.openURL(urlString)
+            }
         } else {
-            sharedApp.openURL(urlString)
+            return false
         }
         
         defaults.set(userInput, forKey: previous)
         defaults.synchronize()
         inputField.resignFirstResponder()
+        return true
+    }
+    
+    @IBAction func doStuff() {
+        _ = openLink()
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return openLink()
     }
 }

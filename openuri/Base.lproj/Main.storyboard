@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,35 +23,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="App-prefs:root=General" minimumFontSize="14" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="eJl-eM-lH1">
-                                <rect key="frame" x="16" y="120" width="343" height="44"/>
+                                <rect key="frame" x="22" y="120" width="331" height="44"/>
                                 <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="CfW-zN-kcI"/>
                                 </constraints>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardAppearance="alert" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" keyboardAppearance="alert" returnKeyType="go" enablesReturnKeyAutomatically="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="neK-Uf-hq6"/>
+                                </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter URL/I below" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ2-WY-Ei2">
-                                <rect key="frame" x="16" y="66" width="343" height="44"/>
+                                <rect key="frame" x="16" y="86" width="343" height="22"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="ZEF-Gf-05q"/>
+                                    <constraint firstAttribute="height" constant="22" id="ZEF-Gf-05q"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="textColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open URI by ipad_kid in Swift" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdg-kd-o5X">
-                                <rect key="frame" x="87.5" y="610" width="200" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="Z41-YG-sjd"/>
-                                </constraints>
+                                <rect key="frame" x="93" y="622" width="189.5" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Mo-7i-ajz" userLabel="Go">
-                                <rect key="frame" x="16" y="189" width="343" height="41"/>
+                                <rect key="frame" x="22" y="189" width="331" height="41"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="Go"/>
                                 <connections>
@@ -62,17 +62,15 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="1Mo-7i-ajz" firstAttribute="top" secondItem="eJl-eM-lH1" secondAttribute="bottom" constant="25" id="1IQ-go-iWh"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hdg-kd-o5X" secondAttribute="bottom" constant="40" id="1xF-3G-jrl"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Hdg-kd-o5X" secondAttribute="bottom" constant="28" id="1xF-3G-jrl"/>
                             <constraint firstItem="eJl-eM-lH1" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="5u8-cb-B0e"/>
-                            <constraint firstItem="eJl-eM-lH1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="8vT-1X-wbA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Mo-7i-ajz" secondAttribute="trailing" id="Hhf-c3-6Sa"/>
+                            <constraint firstItem="eJl-eM-lH1" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="8vT-1X-wbA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1Mo-7i-ajz" secondAttribute="trailing" constant="6" id="Hhf-c3-6Sa"/>
                             <constraint firstItem="Hdg-kd-o5X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="NEM-Ka-JDo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="jZ2-WY-Ei2" secondAttribute="trailing" id="SMm-lE-Us9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="eJl-eM-lH1" secondAttribute="trailing" id="YAi-D3-Yxu"/>
-                            <constraint firstItem="1Mo-7i-ajz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZAl-fd-xjg"/>
-                            <constraint firstItem="1Mo-7i-ajz" firstAttribute="leading" secondItem="eJl-eM-lH1" secondAttribute="leading" id="jWu-1X-fVT"/>
-                            <constraint firstItem="eJl-eM-lH1" firstAttribute="top" secondItem="jZ2-WY-Ei2" secondAttribute="bottom" constant="10" id="pi7-9o-UXF"/>
-                            <constraint firstItem="eJl-eM-lH1" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="puR-9g-THb"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eJl-eM-lH1" secondAttribute="trailing" constant="6" id="YAi-D3-Yxu"/>
+                            <constraint firstItem="1Mo-7i-ajz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="6" id="ZAl-fd-xjg"/>
+                            <constraint firstItem="eJl-eM-lH1" firstAttribute="top" secondItem="jZ2-WY-Ei2" secondAttribute="bottom" constant="12" id="pi7-9o-UXF"/>
                             <constraint firstItem="jZ2-WY-Ei2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="txV-8N-v7M"/>
                         </constraints>
                     </view>
